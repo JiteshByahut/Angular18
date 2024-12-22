@@ -1,0 +1,48 @@
+<h1>Add Employee</h1>
+<div class="container">
+    <form [formGroup]="employeeForm" (ngSubmit)="save()">
+    <div class="row">
+      <div class="col-md-6">Name</div>
+      <div class="col-md-6">
+        <input type="text" class="form-control" formControlName="name" />
+        @if(employeeForm.get('name')?.dirty && employeeForm.get('name')?.touched && employeeForm.get('name')?.invalid)
+        {
+          Name is required
+        }
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">City</div>
+      <div class="col-md-6">
+        <input type="text" class="form-control" formControlName="city" />
+        @if(employeeForm.get('city')?.dirty && employeeForm.get('city')?.touched && employeeForm.get('city')?.invalid)
+        {
+          City is required
+        }
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">Email Id</div>
+      <div class="col-md-6">
+        <input type="text" class="form-control" formControlName="emailId" />
+        @if(employeeForm.get('emailId')?.dirty && employeeForm.get('emailId')?.touched && employeeForm.get('emailId')?.invalid)
+        {
+          Email is required
+        }
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">Mobile</div>
+      <div class="col-md-6">
+        <input type="text" class="form-control" formControlName="mobile" />
+        @if(employeeForm.get('mobile')?.dirty && employeeForm.get('mobile')?.touched && employeeForm.get('mobile')?.invalid)
+        {
+          Mobile is required
+        }
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!employeeForm.valid">Save</button>
+    <button type="button" class="btn btn-success" (click)="back()">Back</button>
+  </form>
+  </div>
